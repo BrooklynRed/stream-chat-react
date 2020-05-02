@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Avatar } from './Avatar';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import truncate from 'lodash/truncate';
 import { withTranslationContext } from '../context';
@@ -50,7 +51,7 @@ class ChannelPreviewLastMessage extends PureComponent {
   };
 
   render() {
-    const { t, displayTitle, displayImage } = this.props;
+    const { t, displayTitle, displayImage, channel } = this.props;
 
     const unreadClass =
       this.props.unread >= 1 ? 'str-chat__channel-preview--unread' : '';
@@ -58,31 +59,53 @@ class ChannelPreviewLastMessage extends PureComponent {
       ? 'str-chat__channel-preview--active'
       : '';
 
+    const isDm = channel.data.member_count === 2;
+    const lastUpdatedAt = moment(channel.data.last_message_at);
+
     return (
       <div
-        className={`str-chat__channel-preview ${unreadClass} ${activeClass}`}
+        className={`str-chat__channel-preview ${unreadClass} ${activeClass} ${
+          isDm
+            ? 'str-chat__channel-preview--dm'
+            : 'str-chat__channel-preview--group'
+        }`}
       >
         <button onClick={this.onSelectChannel} ref={this.channelPreviewButton}>
           {this.props.unread >= 1 && (
             <div className="str-chat__channel-preview--dot" />
           )}
-          <Avatar image={displayImage} />
-          <div className="str-chat__channel-preview-info">
-            <span className="str-chat__channel-preview-title">
-              {displayTitle}
-            </span>
-            <span className="str-chat__channel-preview-last-message">
-              {!this.props.channel.state.messages[0]
-                ? t('Nothing yet...')
-                : truncate(this.props.latestMessage, {
-                    length: this.props.latestMessageLength,
-                  })}
-            </span>
-            {this.props.unread >= 1 && (
-              <span className="str-chat__channel-preview-unread-count">
-                {this.props.unread}
+          <div className="str-chat--channel-summary">
+            {isDm && <Avatar image={displayImage} />}
+
+            <div className="str-chat__channel-preview-info">
+              <span className="str-chat__channel-preview-title">
+                {displayTitle}
               </span>
-            )}
+              <span className="str-chat__channel-preview-last-message">
+                {!this.props.channel.state.messages[0]
+                  ? t('Nothing yet...')
+                  : truncate(this.props.latestMessage, {
+                      length: this.props.latestMessageLength,
+                    })}
+              </span>
+              {this.props.unread >= 1 && (
+                <span className="str-chat__channel-preview-unread-count">
+                  {this.props.unread}
+                </span>
+              )}
+            </div>
+          </div>
+
+          {!isDm && (
+            <div className="str-chat--channel-status">
+              <span>{channel.data.member_count} members</span>
+            </div>
+          )}
+
+          <div className="str-chat--channel-last-update">
+            {moment().diff(lastUpdatedAt, 'days') > 0
+              ? lastUpdatedAt.format('M/D/YY')
+              : lastUpdatedAt.fromNow()}
           </div>
         </button>
       </div>

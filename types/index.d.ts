@@ -11,7 +11,10 @@ import * as Dayjs from 'dayjs';
 export interface ChatContextValue {
   client?: Client.StreamChat;
   channel?: Client.Channel;
-  setActiveChannel?(channel: Client.Channel, event: React.SyntheticEvent): void;
+  setActiveChannel?(
+    channel: Client.Channel,
+    event?: React.SyntheticEvent,
+  ): void;
   openNav?: boolean;
   openMobileNav?(): void;
   closeMobileNav?(): void;
@@ -131,6 +134,10 @@ export interface ChannelProps
 }
 
 export interface ChannelListProps extends ChatContextValue {
+  view?: 'all' | 'dm' | 'group';
+  search?: '';
+  Header?: React.Component | React.StatelessComponent;
+
   EmptyStateIndicator?: React.ElementType<EmptyStateIndicatorProps>;
   /** The Preview to use, defaults to ChannelPreviewLastMessage */
   Preview?: React.ElementType<ChannelPreviewUIComponentProps>;

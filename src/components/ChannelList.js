@@ -23,6 +23,10 @@ import { ChatDown } from './ChatDown';
 
 class ChannelList extends PureComponent {
   static propTypes = {
+    view: PropTypes.oneOf(['all', 'dm', 'group']),
+    search: PropTypes.string,
+    Header: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+
     /**
      *
      *
@@ -168,6 +172,8 @@ class ChannelList extends PureComponent {
   };
 
   static defaultProps = {
+    view: 'all',
+    search: '',
     Preview: ChannelPreviewLastMessage,
     LoadingIndicator: LoadingChannels,
     LoadingErrorIndicator: ChatDown,
@@ -215,7 +221,11 @@ class ChannelList extends PureComponent {
   }
 
   async componentDidUpdate(prevProps) {
-    if (!deepequal(prevProps.filters, this.props.filters)) {
+    if (
+      !deepequal(prevProps.filters, this.props.filters) ||
+      prevProps.view !== this.props.view ||
+      prevProps.search !== this.props.search
+    ) {
       await this.setState({
         offset: 0,
         channels: Immutable([]),
@@ -232,7 +242,14 @@ class ChannelList extends PureComponent {
   }
 
   queryChannels = async () => {
-    const { options, filters, sort, setActiveChannelOnMount } = this.props;
+    const {
+      options,
+      filters,
+      sort,
+      setActiveChannelOnMount,
+      view,
+      search,
+    } = this.props;
     const { offset } = this.state;
 
     this.setState({ refreshing: true });
@@ -253,7 +270,15 @@ class ChannelList extends PureComponent {
         channelQueryResponse = await channelPromise;
       }
       this.setState((prevState) => {
-        const channels = [...prevState.channels, ...channelQueryResponse];
+        const channels = [
+          ...prevState.channels,
+          ...channelQueryResponse,
+        ].filter((channel) => {
+          if (view === 'dm') return channel.data.member_count === 2;
+          if (view === 'group') return channel.data.member_count > 2;
+
+          return true;
+        });
 
         return {
           channels, // not unique somehow needs more checking
@@ -498,7 +523,7 @@ class ChannelList extends PureComponent {
   };
 
   render() {
-    const { List, Paginator, EmptyStateIndicator } = this.props;
+    const { List, Paginator, EmptyStateIndicator, Header } = this.props;
     const { channels, loadingChannels, refreshing, hasNextPage } = this.state;
     return (
       <React.Fragment>
@@ -508,6 +533,7 @@ class ChannelList extends PureComponent {
           }`}
           ref={(ref) => (this.channelListRef = ref)}
         >
+          {Header && <Header />}
           <List
             loading={loadingChannels}
             error={this.state.error}
