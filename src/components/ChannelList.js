@@ -223,8 +223,7 @@ class ChannelList extends PureComponent {
   async componentDidUpdate(prevProps) {
     if (
       !deepequal(prevProps.filters, this.props.filters) ||
-      prevProps.view !== this.props.view ||
-      prevProps.search !== this.props.search
+      prevProps.view !== this.props.view
     ) {
       await this.setState({
         offset: 0,
@@ -248,7 +247,6 @@ class ChannelList extends PureComponent {
       sort,
       setActiveChannelOnMount,
       view,
-      search,
     } = this.props;
     const { offset } = this.state;
 
