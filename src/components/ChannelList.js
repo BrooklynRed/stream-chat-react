@@ -190,6 +190,8 @@ class ChannelList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
+      searchResults: Immutable([]),
+
       // list of channels
       channels: Immutable([]),
       // loading channels
@@ -233,6 +235,25 @@ class ChannelList extends PureComponent {
       });
       await this.queryChannels();
     }
+
+    if (prevProps.search !== this.props.search) {
+      if (this.props.search.length > 0) {
+        const searchResults = await this.props.client.search(
+          this.props.filters,
+          this.props.search,
+        );
+        await this.setState({
+          searchResults: Immutable(
+            searchResults.results.map(({ message }) => message),
+          ),
+        });
+      } else {
+        await this.setState({
+          searchResults: Immutable([]),
+        });
+      }
+      await this.queryChannels();
+    }
   }
 
   componentWillUnmount() {
@@ -268,15 +289,21 @@ class ChannelList extends PureComponent {
         channelQueryResponse = await channelPromise;
       }
       this.setState((prevState) => {
-        const channels = [
-          ...prevState.channels,
-          ...channelQueryResponse,
-        ].filter((channel) => {
-          if (view === 'dm') return channel.data.member_count === 2;
-          if (view === 'group') return channel.data.member_count > 2;
+        const channelsWithSearchResults = this.state.searchResults.map(
+          (message) => message.channel.cid,
+        );
+        const channels = [...prevState.channels, ...channelQueryResponse]
+          .filter((channel) => {
+            if (view === 'dm') return channel.data.member_count === 2;
+            if (view === 'group') return channel.data.member_count > 2;
 
-          return true;
-        });
+            return true;
+          })
+          .filter((channel) =>
+            this.props.search.length > 0
+              ? channelsWithSearchResults.includes(channel.cid)
+              : true,
+          );
 
         return {
           channels, // not unique somehow needs more checking

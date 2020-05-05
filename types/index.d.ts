@@ -135,7 +135,7 @@ export interface ChannelProps
 
 export interface ChannelListProps extends ChatContextValue {
   view?: 'all' | 'dm' | 'group';
-  search?: '';
+  search?: string;
   Header?: React.Component | React.StatelessComponent;
 
   EmptyStateIndicator?: React.ElementType<EmptyStateIndicatorProps>;
