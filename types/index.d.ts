@@ -350,7 +350,7 @@ export interface ChannelHeaderProps
   extends ChannelContextValue,
     TranslationContextValue,
     ChatContextValue {
-  MemberList?: React.ElementType;
+  MemberList?: React.ComponentType<ChatContextValue>;
 
   /** Set title manually */
   title?: string;
