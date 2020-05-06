@@ -15,6 +15,8 @@ import {
  */
 class ChannelHeader extends PureComponent {
   static propTypes = {
+    MemberList: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+
     /** Set title manually */
     title: PropTypes.string,
     /** Show a little indicator that the channel is live right now */
@@ -26,7 +28,14 @@ class ChannelHeader extends PureComponent {
   };
 
   render() {
-    const { t, channel, title, live, watcher_count } = this.props;
+    const {
+      t,
+      channel,
+      title,
+      live,
+      watcher_count,
+      MemberList = ({ children }) => <>{children}</>,
+    } = this.props;
 
     return (
       <div className="str-chat__header-livestream">
@@ -60,15 +69,17 @@ class ChannelHeader extends PureComponent {
             </p>
           )}
           <p className="str-chat__header-livestream-left--members">
-            {!live && channel.data.member_count > 0 && (
-              <>
-                {t('{{ memberCount }} members', {
-                  memberCount: channel.data.member_count,
-                })}
-                ,{' '}
-              </>
-            )}
-            {t('{{ watcherCount }} online', { watcherCount: watcher_count })}
+            <MemberList>
+              {!live && channel.data.member_count > 0 && (
+                <>
+                  {t('{{ memberCount }} members', {
+                    memberCount: channel.data.member_count,
+                  })}
+                  ,{' '}
+                </>
+              )}
+              {t('{{ watcherCount }} online', { watcherCount: watcher_count })}
+            </MemberList>
           </p>
         </div>
       </div>
