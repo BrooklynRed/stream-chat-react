@@ -15,8 +15,6 @@ import {
  */
 class ChannelHeader extends PureComponent {
   static propTypes = {
-    MemberList: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-
     /** Set title manually */
     title: PropTypes.string,
     /** Show a little indicator that the channel is live right now */

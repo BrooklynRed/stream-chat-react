@@ -7719,8 +7719,6 @@ var ChannelHeader = /*#__PURE__*/function (_PureComponent) {
 }(PureComponent);
 
 _defineProperty(ChannelHeader, "propTypes", {
-  MemberList: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-
   /** Set title manually */
   title: PropTypes.string,
 

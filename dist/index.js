@@ -7727,8 +7727,6 @@ exports.ChannelHeader = /*#__PURE__*/function (_PureComponent) {
 }(React.PureComponent);
 
 _defineProperty(exports.ChannelHeader, "propTypes", {
-  MemberList: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-
   /** Set title manually */
   title: PropTypes.string,
 
