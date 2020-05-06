@@ -350,6 +350,8 @@ export interface ChannelHeaderProps
   extends ChannelContextValue,
     TranslationContextValue,
     ChatContextValue {
+  MemberList?: React.ElementType;
+
   /** Set title manually */
   title?: string;
   /** Show a little indicator that the channel is live right now */
