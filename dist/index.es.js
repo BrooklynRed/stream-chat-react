@@ -108,334 +108,334 @@ var enTranslations = {
 	"🏙 Attachment...": "🏙 Attachment..."
 };
 
-var Cancel$1 = "";
-var Delete$1 = "";
-var Delivered$1 = "";
-var Flag$1 = "";
-var Mute$1 = "";
-var Send$1 = "";
-var Thread$1 = "";
-var live$1 = "";
+var Cancel$1 = "Annuleer";
+var Delete$1 = "Verwijder";
+var Delivered$1 = "Afgeleverd";
+var Flag$1 = "Markeer";
+var Mute$1 = "Dempen";
+var Send$1 = "Verstuur";
+var Thread$1 = "Draadje";
+var live$1 = "live";
 var nlTranslations = {
-	"1 reply": "",
+	"1 reply": "1 antwoord",
 	Cancel: Cancel$1,
-	"Channel Missing": "",
-	"Connection failure, reconnecting now...": "",
+	"Channel Missing": "Kanaal niet gevonden",
+	"Connection failure, reconnecting now...": "Probleem met de verbinding, opnieuw verbinding maken...",
 	Delete: Delete$1,
 	Delivered: Delivered$1,
-	"Edit Message": "",
-	"Empty message...": "",
-	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "",
-	"Error connecting to chat, refresh the page to try again.": "",
-	"Error muting a user ...": "",
-	"Error · Unsent": "",
-	"Error: {{ errorMessage }}": "",
+	"Edit Message": "Pas bericht aan",
+	"Empty message...": "Leeg bericht...",
+	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "Fout bij het markeren: of het bericht is al gemarkeerd of er is een probleem met de netwerk verbinding",
+	"Error connecting to chat, refresh the page to try again.": "Fout bij het verbinden, ververs de pagina om nogmaals te proberen",
+	"Error muting a user ...": "Fout bij het dempen van de gebruiker",
+	"Error · Unsent": "Error: · niet verzonden",
+	"Error: {{ errorMessage }}": "Error: {{ errorMessage }}",
 	Flag: Flag$1,
-	"Message Failed · Click to try again": "",
-	"Message deleted": "",
-	"Message failed. Click to try again.": "",
-	"Message has been successfully flagged": "",
+	"Message Failed · Click to try again": "Bericht mislukt, klik om het nogmaals te proberen",
+	"Message deleted": "Bericht verwijderd",
+	"Message failed. Click to try again.": "Bericht mislukt, klik om het nogmaals te proberen",
+	"Message has been successfully flagged": "Bericht is succesvol gemarkeerd",
 	Mute: Mute$1,
-	"New Messages!": "",
-	"Nothing yet...": "",
-	"Only visible to you": "",
-	"Pick your emoji": "",
+	"New Messages!": "Nieuwe Berichten!",
+	"Nothing yet...": "Nog niets ...",
+	"Only visible to you": "Alleen zichtbaar voor jou",
+	"Pick your emoji": "Kies je emoji",
 	Send: Send$1,
-	"Sending...": "",
-	"Start of a new thread": "",
-	"This message was deleted...": "",
+	"Sending...": "Aan het verzenden...",
+	"Start of a new thread": "Begin van een nieuwe draadje",
+	"This message was deleted...": "Dit bericht was verwijderd",
 	Thread: Thread$1,
-	"Type your message": "",
-	"You have no channels currently": "",
+	"Type your message": "Type je bericht",
+	"You have no channels currently": "Er zijn geen chats beschikbaar",
 	live: live$1,
 	"this content could not be displayed": "Deze inhoud kan niet weergegeven worden",
-	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "",
-	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "",
-	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "",
-	"{{ firstUser }} and {{ secondUser }}": "",
-	"{{ firstUser }} and {{ secondUser }} are typing...": "",
-	"{{ imageCount }} more": "",
-	"{{ memberCount }} members": "",
-	"{{ replyCount }} replies": "",
-	"{{ user }} has been muted": "",
-	"{{ user }} is typing...": "",
-	"{{ watcherCount }} online": "",
-	"🏙 Attachment...": ""
+	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} en {{ lastUser }} zijn aan het typen ...",
+	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "{{ commaSeparatedUsers }} en {{ moreCount }} meer",
+	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "{{ commaSeparatedUsers }} en {{ lastUser }}",
+	"{{ firstUser }} and {{ secondUser }}": "{{ firstUser }} en {{ secondUser }}",
+	"{{ firstUser }} and {{ secondUser }} are typing...": "{{ firstUser }} en {{ secondUser }} zijn aan het typen ...",
+	"{{ imageCount }} more": "+{{ imageCount }}",
+	"{{ memberCount }} members": "{{ memberCount }} deelnemers",
+	"{{ replyCount }} replies": "{{ replyCount }} antwoorden",
+	"{{ user }} has been muted": "{{ user }} is gedempt",
+	"{{ user }} is typing...": "{{ user }} is aan het typen...",
+	"{{ watcherCount }} online": "{{ watcherCount }} online",
+	"🏙 Attachment...": "🏙 Bijlage..."
 };
 
-var Cancel$2 = "";
-var Delete$2 = "";
-var Delivered$2 = "";
-var Flag$2 = "";
-var Mute$2 = "";
-var Send$2 = "";
-var Thread$2 = "";
-var live$2 = "";
+var Cancel$2 = "Отмена";
+var Delete$2 = "Удалить";
+var Delivered$2 = "Отправлено";
+var Flag$2 = "Пожаловаться";
+var Mute$2 = "Отключить уведомления";
+var Send$2 = "Отправить";
+var Thread$2 = "Ветка";
+var live$2 = "В прямом эфире";
 var ruTranslations = {
-	"1 reply": "",
+	"1 reply": "1 ответ",
 	Cancel: Cancel$2,
-	"Channel Missing": "",
-	"Connection failure, reconnecting now...": "",
+	"Channel Missing": "Канал не найден",
+	"Connection failure, reconnecting now...": "Ошибка соединения, переподключение...",
 	Delete: Delete$2,
 	Delivered: Delivered$2,
-	"Edit Message": "",
-	"Empty message...": "",
-	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "",
-	"Error connecting to chat, refresh the page to try again.": "",
-	"Error muting a user ...": "",
-	"Error · Unsent": "",
-	"Error: {{ errorMessage }}": "",
+	"Edit Message": "Редактировать сообщение",
+	"Empty message...": "Пустое сообщение...",
+	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "Ошибка добавления флага: флаг уже существует или ошибка подключения к сети...",
+	"Error connecting to chat, refresh the page to try again.": "Ошибка подключения к чату, обновите страницу чтобы попробовать снова.",
+	"Error muting a user ...": "Ошибка отключения уведомлений от пользователя...",
+	"Error · Unsent": "Ошибка · Не отправлено",
+	"Error: {{ errorMessage }}": "Ошибка: {{ errorMessage }}",
 	Flag: Flag$2,
-	"Message Failed · Click to try again": "",
-	"Message deleted": "",
-	"Message failed. Click to try again.": "",
-	"Message has been successfully flagged": "",
+	"Message Failed · Click to try again": "Ошибка отправки сообщения · Нажмите чтобы повторить",
+	"Message deleted": "Сообщение удалено",
+	"Message failed. Click to try again.": "Ошибка отправки сообщения · Нажмите чтобы повторить",
+	"Message has been successfully flagged": "Жалоба на сообщение была принята",
 	Mute: Mute$2,
-	"New Messages!": "",
-	"Nothing yet...": "",
-	"Only visible to you": "",
-	"Pick your emoji": "",
+	"New Messages!": "Новые сообщения!",
+	"Nothing yet...": "Пока ничего нет...",
+	"Only visible to you": "Только видно для вас",
+	"Pick your emoji": "Выберите свой emoji",
 	Send: Send$2,
-	"Sending...": "",
-	"Start of a new thread": "",
-	"This message was deleted...": "",
+	"Sending...": "Отправка...",
+	"Start of a new thread": "Начало новой ветки",
+	"This message was deleted...": "Сообщение было удалено...",
 	Thread: Thread$2,
-	"Type your message": "",
-	"You have no channels currently": "",
+	"Type your message": "Ваше сообщение",
+	"You have no channels currently": "У вас нет каналов в данный момент",
 	live: live$2,
 	"this content could not be displayed": "Этот контент не может быть отображен в данный момент",
-	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "",
-	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "",
-	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "",
-	"{{ firstUser }} and {{ secondUser }}": "",
-	"{{ firstUser }} and {{ secondUser }} are typing...": "",
-	"{{ imageCount }} more": "",
-	"{{ memberCount }} members": "",
-	"{{ replyCount }} replies": "",
-	"{{ user }} has been muted": "",
-	"{{ user }} is typing...": "",
-	"{{ watcherCount }} online": "",
-	"🏙 Attachment...": ""
+	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} и {{ lastUser }} пишут...",
+	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "{{ commaSeparatedUsers }} и {{ moreCount }} еще",
+	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "{{ commaSeparatedUsers }} и {{ lastUser }}",
+	"{{ firstUser }} and {{ secondUser }}": "{{ firstUser }} и {{ secondUser }}",
+	"{{ firstUser }} and {{ secondUser }} are typing...": "{{ firstUser }} и {{ secondUser }} пишут...",
+	"{{ imageCount }} more": "Ещё {{ imageCount }}",
+	"{{ memberCount }} members": "{{ memberCount }} члены",
+	"{{ replyCount }} replies": "{{ replyCount }} ответов",
+	"{{ user }} has been muted": "{{ user }} has been muted",
+	"{{ user }} is typing...": "{{ user }} пишет...",
+	"{{ watcherCount }} online": "{{ watcherCount }} в сети",
+	"🏙 Attachment...": "🏙 Вложение..."
 };
 
-var Cancel$3 = "";
-var Delete$3 = "";
-var Delivered$3 = "";
-var Flag$3 = "";
-var Mute$3 = "";
-var Send$3 = "";
-var Thread$3 = "";
-var live$3 = "";
+var Cancel$3 = "İptal";
+var Delete$3 = "Sil";
+var Delivered$3 = "İletildi";
+var Flag$3 = "Bayrak";
+var Mute$3 = "Sessiz";
+var Send$3 = "Gönder";
+var Thread$3 = "Konu";
+var live$3 = "canlı";
 var trTranslations = {
-	"1 reply": "",
+	"1 reply": "1 cevap",
 	Cancel: Cancel$3,
-	"Channel Missing": "",
-	"Connection failure, reconnecting now...": "",
+	"Channel Missing": "Kanal bulunamıyor",
+	"Connection failure, reconnecting now...": "Bağlantı hatası, tekrar bağlanılıyor...",
 	Delete: Delete$3,
 	Delivered: Delivered$3,
-	"Edit Message": "",
-	"Empty message...": "",
-	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "",
-	"Error connecting to chat, refresh the page to try again.": "",
-	"Error muting a user ...": "",
-	"Error · Unsent": "",
-	"Error: {{ errorMessage }}": "",
+	"Edit Message": "Mesajı Düzenle",
+	"Empty message...": "Boş mesaj...",
+	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "Bayraklama hatası: Bayrak zaten var veya bağlantı sorunlu",
+	"Error connecting to chat, refresh the page to try again.": "Bağlantı hatası, sayfayı yenileyip tekrar deneyin.",
+	"Error muting a user ...": "Kullanıcıyı sessize alırken hata oluştu ...",
+	"Error · Unsent": "Hata · Gönderilemedi",
+	"Error: {{ errorMessage }}": "Hata: {{ errorMessage }}",
 	Flag: Flag$3,
-	"Message Failed · Click to try again": "",
-	"Message deleted": "",
-	"Message failed. Click to try again.": "",
-	"Message has been successfully flagged": "",
+	"Message Failed · Click to try again": "Mesaj Başarısız · Tekrar denemek için tıklayın",
+	"Message deleted": "Mesaj silindi",
+	"Message failed. Click to try again.": "Mesaj başarısız oldu. Tekrar denemek için tıklayın",
+	"Message has been successfully flagged": "Mesaj başarıyla bayraklandı",
 	Mute: Mute$3,
-	"New Messages!": "",
-	"Nothing yet...": "",
-	"Only visible to you": "",
-	"Pick your emoji": "",
+	"New Messages!": "Yeni Mesajlar!",
+	"Nothing yet...": "Şimdilik hiçbir şey...",
+	"Only visible to you": "Sadece size görünür",
+	"Pick your emoji": "Emoji seçin",
 	Send: Send$3,
-	"Sending...": "",
-	"Start of a new thread": "",
-	"This message was deleted...": "",
+	"Sending...": "Gönderiliyor...",
+	"Start of a new thread": "Yeni konunun başı",
+	"This message was deleted...": "Bu mesaj silindi",
 	Thread: Thread$3,
-	"Type your message": "",
-	"You have no channels currently": "",
+	"Type your message": "Mesajınızı yazın",
+	"You have no channels currently": "Henüz kanalınız yok",
 	live: live$3,
 	"this content could not be displayed": "bu içerik gösterilemiyor",
-	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "",
-	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "",
-	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "",
-	"{{ firstUser }} and {{ secondUser }}": "",
-	"{{ firstUser }} and {{ secondUser }} are typing...": "",
-	"{{ imageCount }} more": "",
-	"{{ memberCount }} members": "",
-	"{{ replyCount }} replies": "",
-	"{{ user }} has been muted": "",
-	"{{ user }} is typing...": "",
-	"{{ watcherCount }} online": "",
-	"🏙 Attachment...": ""
+	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} ve {{ lastUser }} yazıyor...",
+	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "{{ commaSeparatedUsers }} ve {{ moreCount }} daha",
+	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "{{ commaSeparatedUsers }}, ve {{ lastUser }}",
+	"{{ firstUser }} and {{ secondUser }}": "{{ firstUser }} ve {{ secondUser }}",
+	"{{ firstUser }} and {{ secondUser }} are typing...": "{{ firstUser }} ve {{ secondUser }} yazıyor...",
+	"{{ imageCount }} more": "{{ imageCount }} adet daha",
+	"{{ memberCount }} members": "{{ memberCount }} üyeler",
+	"{{ replyCount }} replies": "{{ replyCount }} cevaplar",
+	"{{ user }} has been muted": "{{ user }} sessize alındı",
+	"{{ user }} is typing...": "{{ user }} yazıyor...",
+	"{{ watcherCount }} online": "{{ watcherCount }} çevrimiçi",
+	"🏙 Attachment...": "🏙 Ek..."
 };
 
-var Cancel$4 = "";
-var Delete$4 = "";
-var Delivered$4 = "";
-var Flag$4 = "";
-var Mute$4 = "";
-var Send$4 = "";
-var Thread$4 = "";
-var live$4 = "";
+var Cancel$4 = "Annuler";
+var Delete$4 = "Supprimer";
+var Delivered$4 = "Publié";
+var Flag$4 = "Signaler";
+var Mute$4 = "Muet";
+var Send$4 = "Envoyer";
+var Thread$4 = "Fil de discussion";
+var live$4 = "en direct";
 var frTranslations = {
-	"1 reply": "",
+	"1 reply": "1 réponse",
 	Cancel: Cancel$4,
-	"Channel Missing": "",
-	"Connection failure, reconnecting now...": "",
+	"Channel Missing": "Canal Manquant",
+	"Connection failure, reconnecting now...": "Échec de la connexion, reconnexion en cours...",
 	Delete: Delete$4,
 	Delivered: Delivered$4,
-	"Edit Message": "",
-	"Empty message...": "",
-	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "",
-	"Error connecting to chat, refresh the page to try again.": "",
-	"Error muting a user ...": "",
-	"Error · Unsent": "",
-	"Error: {{ errorMessage }}": "",
+	"Edit Message": "Éditer un message",
+	"Empty message...": "Message vide...",
+	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "Erreur d'ajout du flag : le flag existe déjà ou vous rencontrez un problème de connexion au réseau ...",
+	"Error connecting to chat, refresh the page to try again.": "Erreur de connexion au chat, rafraîchissez la page pour réessayer.",
+	"Error muting a user ...": "Erreur de mise en sourdine d'un utilisateur ...",
+	"Error · Unsent": "Erreur - Non envoyé",
+	"Error: {{ errorMessage }}": "Erreur : {{ errorMessage }}",
 	Flag: Flag$4,
-	"Message Failed · Click to try again": "",
-	"Message deleted": "",
-	"Message failed. Click to try again.": "",
-	"Message has been successfully flagged": "",
+	"Message Failed · Click to try again": "Échec de l'envoi du message - Cliquez pour réessayer",
+	"Message deleted": "Message supprimé",
+	"Message failed. Click to try again.": "Échec de l'envoi du message - Cliquez pour réessayer",
+	"Message has been successfully flagged": "Le message a été signalé avec succès",
 	Mute: Mute$4,
-	"New Messages!": "",
-	"Nothing yet...": "",
-	"Only visible to you": "",
-	"Pick your emoji": "",
+	"New Messages!": "Nouveaux Messages!",
+	"Nothing yet...": "Aucun message...",
+	"Only visible to you": "Visible uniquement pour vous",
+	"Pick your emoji": "Choisissez votre emoji",
 	Send: Send$4,
-	"Sending...": "",
-	"Start of a new thread": "",
-	"This message was deleted...": "",
+	"Sending...": "Envoi en cours...",
+	"Start of a new thread": "Début d'un nouveau fil de discussion",
+	"This message was deleted...": "Ce message a été supprimé...",
 	Thread: Thread$4,
-	"Type your message": "",
-	"You have no channels currently": "",
+	"Type your message": "Saisissez votre message",
+	"You have no channels currently": "Vous n'avez actuellement aucun canal",
 	live: live$4,
 	"this content could not be displayed": "ce contenu n'a pu être affiché",
-	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "",
-	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "",
-	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "",
-	"{{ firstUser }} and {{ secondUser }}": "",
-	"{{ firstUser }} and {{ secondUser }} are typing...": "",
-	"{{ imageCount }} more": "",
-	"{{ memberCount }} members": "",
-	"{{ replyCount }} replies": "",
-	"{{ user }} has been muted": "",
-	"{{ user }} is typing...": "",
-	"{{ watcherCount }} online": "",
-	"🏙 Attachment...": ""
+	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} et {{ lastUser }} sont en train d'écrire...",
+	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "{{ commaSeparatedUsers }} et {{ moreCount }} autres",
+	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "{{ commaSeparatedUsers }} et {{ lastUser }}",
+	"{{ firstUser }} and {{ secondUser }}": "{{ firstUser }} et {{ secondUser }}",
+	"{{ firstUser }} and {{ secondUser }} are typing...": "{{ firstUser }} et {{ secondUser }} sont en train d'écrire...",
+	"{{ imageCount }} more": "{{ imageCount }} supplémentaires",
+	"{{ memberCount }} members": "{{ memberCount }} membres",
+	"{{ replyCount }} replies": "{{ replyCount }} réponses",
+	"{{ user }} has been muted": "{{ user }} a été mis en sourdine",
+	"{{ user }} is typing...": "{{ user }} est en train d'écrire...",
+	"{{ watcherCount }} online": "{{ watcherCount }} en ligne",
+	"🏙 Attachment...": "🏙 Pièce jointe..."
 };
 
-var Cancel$5 = "";
-var Delete$5 = "";
-var Delivered$5 = "";
-var Flag$5 = "";
-var Mute$5 = "";
-var Send$5 = "";
-var Thread$5 = "";
-var live$5 = "";
+var Cancel$5 = "रद्द करें";
+var Delete$5 = "डिलीट";
+var Delivered$5 = "पहुंच गया";
+var Flag$5 = "फ्लैग करे";
+var Mute$5 = "म्यूट करे";
+var Send$5 = "भेजे";
+var Thread$5 = "रिप्लाई थ्रेड";
+var live$5 = "लाइव";
 var hiTranslations = {
-	"1 reply": "",
+	"1 reply": "1 रिप्लाई",
 	Cancel: Cancel$5,
-	"Channel Missing": "",
-	"Connection failure, reconnecting now...": "",
+	"Channel Missing": "चैनल उपलब्ध नहीं है",
+	"Connection failure, reconnecting now...": "कनेक्शन विफल रहा, अब पुनः कनेक्ट हो रहा है ...",
 	Delete: Delete$5,
 	Delivered: Delivered$5,
-	"Edit Message": "",
-	"Empty message...": "",
-	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "",
-	"Error connecting to chat, refresh the page to try again.": "",
-	"Error muting a user ...": "",
-	"Error · Unsent": "",
-	"Error: {{ errorMessage }}": "",
+	"Edit Message": "मैसेज में बदलाव करे",
+	"Empty message...": "खाली संदेश ...",
+	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "फ़ैल: या तो यह मैसेज के ऊपर पहले से फ्लैग है या तो आपके इंटरनेट कनेक्शन में कुछ परेशानी है",
+	"Error connecting to chat, refresh the page to try again.": "चैट से कनेक्ट करने में त्रुटि, पेज को रिफ्रेश करें",
+	"Error muting a user ...": "यूजर को म्यूट करने का प्रयास फेल हुआ",
+	"Error · Unsent": "फेल",
+	"Error: {{ errorMessage }}": "फेल: {{ errorMessage }}",
 	Flag: Flag$5,
-	"Message Failed · Click to try again": "",
-	"Message deleted": "",
-	"Message failed. Click to try again.": "",
-	"Message has been successfully flagged": "",
+	"Message Failed · Click to try again": "मैसेज फ़ैल - पुनः कोशिश करें",
+	"Message deleted": "मैसेज हटा दिया गया",
+	"Message failed. Click to try again.": "मैसेज फ़ैल - पुनः कोशिश करें",
+	"Message has been successfully flagged": "मैसेज को फ्लैग कर दिया गया है",
 	Mute: Mute$5,
-	"New Messages!": "",
-	"Nothing yet...": "",
-	"Only visible to you": "",
-	"Pick your emoji": "",
+	"New Messages!": "नए मैसेज!",
+	"Nothing yet...": "कोई मैसेज नहीं है",
+	"Only visible to you": "सिर्फ आपको दिखाई दे रहा है",
+	"Pick your emoji": "इमोजी चूस करे",
 	Send: Send$5,
-	"Sending...": "",
-	"Start of a new thread": "",
-	"This message was deleted...": "",
+	"Sending...": "भेजा जा रहा है",
+	"Start of a new thread": "एक नए थ्रेड की शुरुआत",
+	"This message was deleted...": "मैसेज हटा दिया गया",
 	Thread: Thread$5,
-	"Type your message": "",
-	"You have no channels currently": "",
+	"Type your message": "अपना मैसेज लिखे",
+	"You have no channels currently": "आपके पास कोई चैनल नहीं है",
 	live: live$5,
 	"this content could not be displayed": "यह कॉन्टेंट लोड नहीं हो पाया",
-	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "",
-	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "",
-	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "",
-	"{{ firstUser }} and {{ secondUser }}": "",
-	"{{ firstUser }} and {{ secondUser }} are typing...": "",
-	"{{ imageCount }} more": "",
-	"{{ memberCount }} members": "",
-	"{{ replyCount }} replies": "",
-	"{{ user }} has been muted": "",
-	"{{ user }} is typing...": "",
-	"{{ watcherCount }} online": "",
-	"🏙 Attachment...": ""
+	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} और {{ lastUser }} टाइप कर रहे हैं...",
+	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "{{ commaSeparatedUsers }} और {{ moreCount }} और",
+	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "{{ commaSeparatedUsers }} और {{ lastUser }}",
+	"{{ firstUser }} and {{ secondUser }}": "{{ firstUser }} और {{ secondUser }}",
+	"{{ firstUser }} and {{ secondUser }} are typing...": "{{ firstUser }} और {{ secondUser }} टाइप कर रहे हैं...",
+	"{{ imageCount }} more": "{{ imageCount }} और",
+	"{{ memberCount }} members": "{{ memberCount }} मेंबर्स",
+	"{{ replyCount }} replies": "{{ replyCount }} रिप्लाई",
+	"{{ user }} has been muted": "{{ user }} को म्यूट कर दिया गया है",
+	"{{ user }} is typing...": "{{ user }} टाइप कर रहा है...",
+	"{{ watcherCount }} online": "{{ watcherCount }} online",
+	"🏙 Attachment...": "🏙 अटैचमेंट"
 };
 
-var Cancel$6 = "";
-var Delete$6 = "";
-var Delivered$6 = "";
-var Flag$6 = "";
-var Mute$6 = "";
-var Send$6 = "";
-var Thread$6 = "";
-var live$6 = "";
+var Cancel$6 = "Annulla";
+var Delete$6 = "Cancella";
+var Delivered$6 = "Consegnato";
+var Flag$6 = "Segnala";
+var Mute$6 = "Silenzia";
+var Send$6 = "Invia";
+var Thread$6 = "Thread";
+var live$6 = "live";
 var itTranslations = {
-	"1 reply": "",
+	"1 reply": "Una risposta",
 	Cancel: Cancel$6,
-	"Channel Missing": "",
-	"Connection failure, reconnecting now...": "",
+	"Channel Missing": "Il canale non esiste",
+	"Connection failure, reconnecting now...": "Connessione fallitta, riconnessione in corso...",
 	Delete: Delete$6,
 	Delivered: Delivered$6,
-	"Edit Message": "",
-	"Empty message...": "",
-	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "",
-	"Error connecting to chat, refresh the page to try again.": "",
-	"Error muting a user ...": "",
-	"Error · Unsent": "",
-	"Error: {{ errorMessage }}": "",
+	"Edit Message": "Modifica messaggio",
+	"Empty message...": "Message vuoto...",
+	"Error adding flag: Either the flag already exist or there is issue with network connection ...": "Errore durante la segnalazione: la segnalazione esiste giá o c'é un problema di connessione ...",
+	"Error connecting to chat, refresh the page to try again.": "Errore di connessione alla chat, aggiorna la pagina per riprovare",
+	"Error muting a user ...": "Errore silenziando un utente ...",
+	"Error · Unsent": "Errore · Non inviato",
+	"Error: {{ errorMessage }}": "Errore: {{ errorMessage }}",
 	Flag: Flag$6,
-	"Message Failed · Click to try again": "",
-	"Message deleted": "",
-	"Message failed. Click to try again.": "",
-	"Message has been successfully flagged": "",
+	"Message Failed · Click to try again": "Invio messaggio fallito · Clicca per riprovare",
+	"Message deleted": "Messaggio cancellato",
+	"Message failed. Click to try again.": "Invio messaggio fallito. Clicca per riprovare.",
+	"Message has been successfully flagged": "Il messaggio é stato segnalato con successo",
 	Mute: Mute$6,
-	"New Messages!": "",
-	"Nothing yet...": "",
-	"Only visible to you": "",
-	"Pick your emoji": "",
+	"New Messages!": "Nuovo messaggio!",
+	"Nothing yet...": "Ancora niente...",
+	"Only visible to you": "Visibile soltanto da te",
+	"Pick your emoji": "Scegli la tua emoji",
 	Send: Send$6,
-	"Sending...": "",
-	"Start of a new thread": "",
-	"This message was deleted...": "",
+	"Sending...": "Invio in corso...",
+	"Start of a new thread": "Inizia un nuovo thread",
+	"This message was deleted...": "Questo messaggio é stato cancellato",
 	Thread: Thread$6,
-	"Type your message": "",
-	"You have no channels currently": "",
+	"Type your message": "Scrivi il tuo messaggio",
+	"You have no channels currently": "Al momento non sono presenti canali",
 	live: live$6,
 	"this content could not be displayed": "questo contenuto non puó essere mostrato",
-	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "",
-	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "",
-	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "",
-	"{{ firstUser }} and {{ secondUser }}": "",
-	"{{ firstUser }} and {{ secondUser }} are typing...": "",
-	"{{ imageCount }} more": "",
-	"{{ memberCount }} members": "",
-	"{{ replyCount }} replies": "",
-	"{{ user }} has been muted": "",
-	"{{ user }} is typing...": "",
-	"{{ watcherCount }} online": "",
-	"🏙 Attachment...": ""
+	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} e {{ lastUser }} stanno scrivendo...",
+	"{{ commaSeparatedUsers }} and {{ moreCount }} more": "{{ commaSeparatedUsers }} e altri {{ moreCount }}",
+	"{{ commaSeparatedUsers }}, and {{ lastUser }}": "{{ commaSeparatedUsers }} e {{ lastUser }}",
+	"{{ firstUser }} and {{ secondUser }}": "{{ firstUser }} e {{ secondUser }}",
+	"{{ firstUser }} and {{ secondUser }} are typing...": "{{ firstUser }} e {{ secondUser }} stanno scrivendo...",
+	"{{ imageCount }} more": "+ {{ imageCount }}",
+	"{{ memberCount }} members": "{{ memberCount }} membri",
+	"{{ replyCount }} replies": "{{ replyCount }} risposte",
+	"{{ user }} has been muted": "{{ user }} é stato silenziato",
+	"{{ user }} is typing...": "{{ user }} sta scrivendo...",
+	"{{ watcherCount }} online": "{{ watcherCount }} online",
+	"🏙 Attachment...": "🏙 Allegato..."
 };
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -8113,13 +8113,13 @@ _defineProperty(ChannelPreview, "defaultProps", {
 ChannelPreview = withTranslationContext(withChatContext(ChannelPreview));
 
 var EmptyStateIndicator = withTranslationContext(function (_ref) {
-  var listType = _ref.listType,
-      t = _ref.t;
+  var listType = _ref.listType;
   var Indicator;
 
   switch (listType) {
     case 'channel':
-      Indicator = /*#__PURE__*/React__default.createElement("p", null, t('You have no channels currently'));
+      // Indicator = <p>{t('You have no channels currently')}</p>;
+      Indicator = null;
       break;
 
     case 'message':
