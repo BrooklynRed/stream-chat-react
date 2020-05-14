@@ -190,7 +190,7 @@ class ChannelList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: Immutable([]),
+      channelSearchResults: Immutable([]),
 
       // list of channels
       channels: Immutable([]),
@@ -238,14 +238,24 @@ class ChannelList extends PureComponent {
 
     if (prevProps.search !== this.props.search) {
       if (this.props.search.length > 0) {
-        const searchResults = await this.props.client.search(
+        const messageSearchResults = await this.props.client.search(
           this.props.filters,
           this.props.search,
         );
+
+        const channelSearchResults = await this.props.client.queryChannels(
+          { ...this.props.filters, name: { $eq: this.props.search } },
+          {},
+          {}
+        );
+
         await this.setState({
-          searchResults: Immutable(
-            searchResults.results.map(({ message }) => message),
-          ),
+          channelSearchResults: Immutable([
+            ...messageSearchResults.results.map(
+              ({ message }) => message.channel.cid,
+            ),
+            ...channelSearchResults.map((channel) => channel.data.cid),
+          ]),
         });
       } else {
         await this.setState({
@@ -276,7 +286,7 @@ class ChannelList extends PureComponent {
     const newOptions = {
       ...options,
     };
-    if (!options.limit) newOptions.limit = 30;
+    if (!options.limit) newOptions.limit = 50;
 
     const channelPromise = this.props.client.queryChannels(filters, sort, {
       ...newOptions,
@@ -289,9 +299,6 @@ class ChannelList extends PureComponent {
         channelQueryResponse = await channelPromise;
       }
       this.setState((prevState) => {
-        const channelsWithSearchResults = this.state.searchResults.map(
-          (message) => message.channel.cid,
-        );
         const channels = [...prevState.channels, ...channelQueryResponse]
           .filter((channel) => {
             if (view === 'dm') return channel.data.member_count === 2;
@@ -301,7 +308,7 @@ class ChannelList extends PureComponent {
           })
           .filter((channel) =>
             this.props.search.length > 0
-              ? channelsWithSearchResults.includes(channel.cid)
+              ? this.state.channelSearchResults.includes(channel.cid)
               : true,
           );
 

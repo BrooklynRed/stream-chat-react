@@ -8492,7 +8492,7 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
               });
 
               newOptions = _objectSpread$7({}, options);
-              if (!options.limit) newOptions.limit = 30;
+              if (!options.limit) newOptions.limit = 50;
               channelPromise = _this.props.client.queryChannels(filters, sort, _objectSpread$7(_objectSpread$7({}, newOptions), {}, {
                 offset: offset
               }));
@@ -8512,16 +8512,12 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
 
             case 12:
               _this.setState(function (prevState) {
-                var channelsWithSearchResults = _this.state.searchResults.map(function (message) {
-                  return message.channel.cid;
-                });
-
                 var channels = [].concat(_toConsumableArray(prevState.channels), _toConsumableArray(channelQueryResponse)).filter(function (channel) {
                   if (view === 'dm') return channel.data.member_count === 2;
                   if (view === 'group') return channel.data.member_count > 2;
                   return true;
                 }).filter(function (channel) {
-                  return _this.props.search.length > 0 ? channelsWithSearchResults.includes(channel.cid) : true;
+                  return _this.props.search.length > 0 ? _this.state.channelSearchResults.includes(channel.cid) : true;
                 });
                 return {
                   channels: channels,
@@ -8844,7 +8840,7 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
     });
 
     _this.state = {
-      searchResults: Immutable([]),
+      channelSearchResults: Immutable([]),
       // list of channels
       channels: Immutable([]),
       // loading channels
@@ -8899,7 +8895,7 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
     key: "componentDidUpdate",
     value: function () {
       var _componentDidUpdate = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee5(prevProps) {
-        var searchResults;
+        var messageSearchResults, channelSearchResults;
         return _regeneratorRuntime.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
@@ -8923,12 +8919,12 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
 
               case 5:
                 if (!(prevProps.search !== this.props.search)) {
-                  _context5.next = 18;
+                  _context5.next = 21;
                   break;
                 }
 
                 if (!(this.props.search.length > 0)) {
-                  _context5.next = 14;
+                  _context5.next = 17;
                   break;
                 }
 
@@ -8936,30 +8932,41 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
                 return this.props.client.search(this.props.filters, this.props.search);
 
               case 9:
-                searchResults = _context5.sent;
+                messageSearchResults = _context5.sent;
                 _context5.next = 12;
-                return this.setState({
-                  searchResults: Immutable(searchResults.results.map(function (_ref4) {
-                    var message = _ref4.message;
-                    return message;
-                  }))
-                });
+                return this.props.client.queryChannels(_objectSpread$7(_objectSpread$7({}, this.props.filters), {}, {
+                  name: {
+                    $eq: this.props.search
+                  }
+                }), {}, {});
 
               case 12:
-                _context5.next = 16;
+                channelSearchResults = _context5.sent;
+                _context5.next = 15;
+                return this.setState({
+                  channelSearchResults: Immutable([].concat(_toConsumableArray(messageSearchResults.results.map(function (_ref4) {
+                    var message = _ref4.message;
+                    return message.channel.cid;
+                  })), _toConsumableArray(channelSearchResults.map(function (channel) {
+                    return channel.data.cid;
+                  }))))
+                });
+
+              case 15:
+                _context5.next = 19;
                 break;
 
-              case 14:
-                _context5.next = 16;
+              case 17:
+                _context5.next = 19;
                 return this.setState({
                   searchResults: Immutable([])
                 });
 
-              case 16:
-                _context5.next = 18;
+              case 19:
+                _context5.next = 21;
                 return this.queryChannels();
 
-              case 18:
+              case 21:
               case "end":
                 return _context5.stop();
             }
