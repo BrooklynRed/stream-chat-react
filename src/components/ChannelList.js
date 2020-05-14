@@ -160,7 +160,7 @@ class ChannelList extends PureComponent {
     /**
      * Set a Channel to be active and move it to the top of the list of channels by ID.
      * */
-    customAciveChannel: PropTypes.string,
+    customActiveChannel: PropTypes.string,
     /**
      * Last channel will be set as active channel if true, defaults to true
      */
@@ -223,10 +223,7 @@ class ChannelList extends PureComponent {
   }
 
   async componentDidUpdate(prevProps) {
-    if (
-      !deepequal(prevProps.filters, this.props.filters) ||
-      prevProps.view !== this.props.view
-    ) {
+    if (!deepequal(prevProps.filters, this.props.filters)) {
       await this.setState({
         offset: 0,
         channels: Immutable([]),
@@ -246,7 +243,7 @@ class ChannelList extends PureComponent {
         const channelSearchResults = await this.props.client.queryChannels(
           { ...this.props.filters, name: { $eq: this.props.search } },
           {},
-          {}
+          {},
         );
 
         await this.setState({
@@ -264,6 +261,13 @@ class ChannelList extends PureComponent {
       }
       await this.queryChannels();
     }
+
+    if (
+      this.props.customActiveChannel &&
+      prevProps.customActiveChannel !== this.props.customActiveChannel
+    ) {
+      this.moveChannelUp(this.props.customActiveChannel);
+    }
   }
 
   componentWillUnmount() {
@@ -272,13 +276,7 @@ class ChannelList extends PureComponent {
   }
 
   queryChannels = async () => {
-    const {
-      options,
-      filters,
-      sort,
-      setActiveChannelOnMount,
-      view,
-    } = this.props;
+    const { options, filters, sort, setActiveChannelOnMount } = this.props;
     const { offset } = this.state;
 
     this.setState({ refreshing: true });
@@ -299,18 +297,7 @@ class ChannelList extends PureComponent {
         channelQueryResponse = await channelPromise;
       }
       this.setState((prevState) => {
-        const channels = [...prevState.channels, ...channelQueryResponse]
-          .filter((channel) => {
-            if (view === 'dm') return channel.data.member_count === 2;
-            if (view === 'group') return channel.data.member_count > 2;
-
-            return true;
-          })
-          .filter((channel) =>
-            this.props.search.length > 0
-              ? this.state.channelSearchResults.includes(channel.cid)
-              : true,
-          );
+        const channels = [...prevState.channels, ...channelQueryResponse];
 
         return {
           channels, // not unique somehow needs more checking
@@ -505,6 +492,7 @@ class ChannelList extends PureComponent {
     const channelIndex = this.state.channels.findIndex(
       (channel) => channel.cid === cid,
     );
+    console.log({ channelIndex, channel: channels[channelIndex] });
     if (channelIndex <= 0) return;
 
     // get channel from channels
@@ -556,7 +544,20 @@ class ChannelList extends PureComponent {
 
   render() {
     const { List, Paginator, EmptyStateIndicator, Header } = this.props;
-    const { channels, loadingChannels, refreshing, hasNextPage } = this.state;
+    const { loadingChannels, refreshing, hasNextPage } = this.state;
+    const channels = this.state.channels
+      .filter((channel) => {
+        if (this.props.view === 'dm') return channel.data.member_count === 2;
+        if (this.props.view === 'group') return channel.data.member_count > 2;
+
+        return true;
+      })
+      .filter((channel) =>
+        this.props.search.length > 0
+          ? this.state.channelSearchResults.includes(channel.cid)
+          : true,
+      );
+
     return (
       <React.Fragment>
         <div

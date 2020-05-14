@@ -182,6 +182,7 @@ export interface ChannelListProps extends ChatContextValue {
   /** Object containing sort parameters */
   sort?: object;
   showSidebar?: boolean;
+  customActiveChannel?: string;
 }
 
 export interface ChannelListUIComponentProps extends ChatContextValue {

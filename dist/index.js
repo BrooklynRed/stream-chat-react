@@ -8478,13 +8478,13 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
     _this = _super.call(this, _props);
 
     _defineProperty(_assertThisInitialized(_this), "queryChannels", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee() {
-      var _this$props, options, filters, sort, setActiveChannelOnMount, view, offset, newOptions, channelPromise, channelQueryResponse, customActiveChannel;
+      var _this$props, options, filters, sort, setActiveChannelOnMount, offset, newOptions, channelPromise, channelQueryResponse, customActiveChannel;
 
       return _regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _this$props = _this.props, options = _this$props.options, filters = _this$props.filters, sort = _this$props.sort, setActiveChannelOnMount = _this$props.setActiveChannelOnMount, view = _this$props.view;
+              _this$props = _this.props, options = _this$props.options, filters = _this$props.filters, sort = _this$props.sort, setActiveChannelOnMount = _this$props.setActiveChannelOnMount;
               offset = _this.state.offset;
 
               _this.setState({
@@ -8512,13 +8512,7 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
 
             case 12:
               _this.setState(function (prevState) {
-                var channels = [].concat(_toConsumableArray(prevState.channels), _toConsumableArray(channelQueryResponse)).filter(function (channel) {
-                  if (view === 'dm') return channel.data.member_count === 2;
-                  if (view === 'group') return channel.data.member_count > 2;
-                  return true;
-                }).filter(function (channel) {
-                  return _this.props.search.length > 0 ? _this.state.channelSearchResults.includes(channel.cid) : true;
-                });
+                var channels = [].concat(_toConsumableArray(prevState.channels), _toConsumableArray(channelQueryResponse));
                 return {
                   channels: channels,
                   // not unique somehow needs more checking
@@ -8795,6 +8789,10 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
         return channel.cid === cid;
       });
 
+      console.log({
+        channelIndex: channelIndex,
+        channel: channels[channelIndex]
+      });
       if (channelIndex <= 0) return; // get channel from channels
 
       var channel = channels[channelIndex]; //remove channel from current position
@@ -8900,7 +8898,7 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
-                if (!(!deepequal(prevProps.filters, this.props.filters) || prevProps.view !== this.props.view)) {
+                if (deepequal(prevProps.filters, this.props.filters)) {
                   _context5.next = 5;
                   break;
                 }
@@ -8967,6 +8965,11 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
                 return this.queryChannels();
 
               case 21:
+                if (this.props.customActiveChannel && prevProps.customActiveChannel !== this.props.customActiveChannel) {
+                  this.moveChannelUp(this.props.customActiveChannel);
+                }
+
+              case 22:
               case "end":
                 return _context5.stop();
             }
@@ -9003,10 +9006,16 @@ exports.ChannelList = /*#__PURE__*/function (_PureComponent) {
           EmptyStateIndicator = _this$props3.EmptyStateIndicator,
           Header = _this$props3.Header;
       var _this$state = this.state,
-          channels = _this$state.channels,
           loadingChannels = _this$state.loadingChannels,
           refreshing = _this$state.refreshing,
           hasNextPage = _this$state.hasNextPage;
+      var channels = this.state.channels.filter(function (channel) {
+        if (_this2.props.view === 'dm') return channel.data.member_count === 2;
+        if (_this2.props.view === 'group') return channel.data.member_count > 2;
+        return true;
+      }).filter(function (channel) {
+        return _this2.props.search.length > 0 ? _this2.state.channelSearchResults.includes(channel.cid) : true;
+      });
       return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("div", {
         className: "str-chat str-chat-channel-list ".concat(this.props.theme, " ").concat(this.props.navOpen ? 'str-chat-channel-list--open' : ''),
         ref: function ref(_ref5) {
@@ -9194,7 +9203,7 @@ _defineProperty(exports.ChannelList, "propTypes", {
   /**
    * Set a Channel to be active and move it to the top of the list of channels by ID.
    * */
-  customAciveChannel: PropTypes.string,
+  customActiveChannel: PropTypes.string,
 
   /**
    * Last channel will be set as active channel if true, defaults to true
