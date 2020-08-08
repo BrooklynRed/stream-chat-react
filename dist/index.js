@@ -6359,6 +6359,7 @@ exports.MessageSimple = /*#__PURE__*/function (_PureComponent) {
           message = _this$props.message,
           threadList = _this$props.threadList,
           lastReceivedId = _this$props.lastReceivedId,
+          Avatar = _this$props.Avatar,
           t = _this$props.t;
 
       if (!_this.isMine() || message.type === 'error') {
@@ -6381,7 +6382,7 @@ exports.MessageSimple = /*#__PURE__*/function (_PureComponent) {
           name: lastReadUser.name || lastReadUser.id,
           image: lastReadUser.image,
           size: 15
-        }), /*#__PURE__*/React__default.createElement("span", null, "test"), readBy.length > 2 && /*#__PURE__*/React__default.createElement("span", {
+        }), readBy.length > 2 && /*#__PURE__*/React__default.createElement("span", {
           className: "str-chat__message-simple-status-number"
         }, readBy.length - 1));
       } else if (message.status === 'received' && message.id === lastReceivedId && !threadList) {
@@ -6528,6 +6529,7 @@ exports.MessageSimple = /*#__PURE__*/function (_PureComponent) {
       var _this$props4 = this.props,
           message = _this$props4.message,
           Attachment = _this$props4.Attachment,
+          Avatar = _this$props4.Avatar,
           editing = _this$props4.editing,
           clearEditingState = _this$props4.clearEditingState,
           handleRetry = _this$props4.handleRetry,
@@ -6580,7 +6582,7 @@ exports.MessageSimple = /*#__PURE__*/function (_PureComponent) {
       }, this.renderStatus(), /*#__PURE__*/React__default.createElement(Avatar, {
         image: message.user.image,
         name: message.user.name || message.user.id
-      }), /*#__PURE__*/React__default.createElement("span", null, "test"), /*#__PURE__*/React__default.createElement("div", {
+      }), /*#__PURE__*/React__default.createElement("div", {
         className: "str-chat__message-inner",
         onClick: message.status === 'failed' ? handleRetry.bind(this, message) : null
       }, !message.text && /*#__PURE__*/React__default.createElement(React__default.Fragment, null, this.renderOptions(), hasReactions && !this.state.showDetailedReactions && /*#__PURE__*/React__default.createElement(ReactionsList, {

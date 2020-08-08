@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Attachment } from './Attachment';
 import { MessageActionsBox } from './MessageActionsBox';
 import { ReactionsList } from './ReactionsList';
-import { Avatar } from './Avatar';
+import { Avatar as DefaultAvatar } from './Avatar';
 import { Tooltip } from './Tooltip';
 import { LoadingIndicator } from './LoadingIndicator';
 import { Gallery } from './Gallery';
@@ -122,7 +122,7 @@ class MessageSimple extends PureComponent {
 
   static defaultProps = {
     Attachment,
-    Avatar,
+    Avatar: DefaultAvatar,
   };
 
   state = {
@@ -203,6 +203,7 @@ class MessageSimple extends PureComponent {
       message,
       threadList,
       lastReceivedId,
+      Avatar,
       t,
     } = this.props;
     if (!this.isMine() || message.type === 'error') {
@@ -231,7 +232,6 @@ class MessageSimple extends PureComponent {
             image={lastReadUser.image}
             size={15}
           />
-          <span>test</span>
           {readBy.length > 2 && (
             <span className="str-chat__message-simple-status-number">
               {readBy.length - 1}
@@ -402,6 +402,7 @@ class MessageSimple extends PureComponent {
     const {
       message,
       Attachment,
+      Avatar,
       editing,
       clearEditingState,
       handleRetry,
@@ -486,7 +487,6 @@ class MessageSimple extends PureComponent {
             image={message.user.image}
             name={message.user.name || message.user.id}
           />
-          <span>test</span>
           <div
             className="str-chat__message-inner"
             onClick={
