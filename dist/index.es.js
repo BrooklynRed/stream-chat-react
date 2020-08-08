@@ -6373,7 +6373,7 @@ var MessageSimple = /*#__PURE__*/function (_PureComponent) {
           name: lastReadUser.name || lastReadUser.id,
           image: lastReadUser.image,
           size: 15
-        }), readBy.length > 2 && /*#__PURE__*/React__default.createElement("span", {
+        }), /*#__PURE__*/React__default.createElement("span", null, "test"), readBy.length > 2 && /*#__PURE__*/React__default.createElement("span", {
           className: "str-chat__message-simple-status-number"
         }, readBy.length - 1));
       } else if (message.status === 'received' && message.id === lastReceivedId && !threadList) {
@@ -6572,7 +6572,7 @@ var MessageSimple = /*#__PURE__*/function (_PureComponent) {
       }, this.renderStatus(), /*#__PURE__*/React__default.createElement(Avatar, {
         image: message.user.image,
         name: message.user.name || message.user.id
-      }), /*#__PURE__*/React__default.createElement("div", {
+      }), /*#__PURE__*/React__default.createElement("span", null, "test"), /*#__PURE__*/React__default.createElement("div", {
         className: "str-chat__message-inner",
         onClick: message.status === 'failed' ? handleRetry.bind(this, message) : null
       }, !message.text && /*#__PURE__*/React__default.createElement(React__default.Fragment, null, this.renderOptions(), hasReactions && !this.state.showDetailedReactions && /*#__PURE__*/React__default.createElement(ReactionsList, {

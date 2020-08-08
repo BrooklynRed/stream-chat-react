@@ -231,6 +231,7 @@ class MessageSimple extends PureComponent {
             image={lastReadUser.image}
             size={15}
           />
+          <span>test</span>
           {readBy.length > 2 && (
             <span className="str-chat__message-simple-status-number">
               {readBy.length - 1}
@@ -485,6 +486,7 @@ class MessageSimple extends PureComponent {
             image={message.user.image}
             name={message.user.name || message.user.id}
           />
+          <span>test</span>
           <div
             className="str-chat__message-inner"
             onClick={
