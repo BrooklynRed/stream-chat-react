@@ -91,7 +91,6 @@ var enTranslations = {
 	"This message was deleted...": "This message was deleted...",
 	Thread: Thread,
 	"Type your message": "Type your message",
-	"You have no channels currently": "You have no channels currently",
 	live: live,
 	"this content could not be displayed": "this content could not be displayed",
 	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} and {{ lastUser }} are typing...",
@@ -146,7 +145,6 @@ var nlTranslations = {
 	"This message was deleted...": "Dit bericht was verwijderd",
 	Thread: Thread$1,
 	"Type your message": "Type je bericht",
-	"You have no channels currently": "Er zijn geen chats beschikbaar",
 	live: live$1,
 	"this content could not be displayed": "Deze inhoud kan niet weergegeven worden",
 	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} en {{ lastUser }} zijn aan het typen ...",
@@ -201,7 +199,6 @@ var ruTranslations = {
 	"This message was deleted...": "Сообщение было удалено...",
 	Thread: Thread$2,
 	"Type your message": "Ваше сообщение",
-	"You have no channels currently": "У вас нет каналов в данный момент",
 	live: live$2,
 	"this content could not be displayed": "Этот контент не может быть отображен в данный момент",
 	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} и {{ lastUser }} пишут...",
@@ -256,7 +253,6 @@ var trTranslations = {
 	"This message was deleted...": "Bu mesaj silindi",
 	Thread: Thread$3,
 	"Type your message": "Mesajınızı yazın",
-	"You have no channels currently": "Henüz kanalınız yok",
 	live: live$3,
 	"this content could not be displayed": "bu içerik gösterilemiyor",
 	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} ve {{ lastUser }} yazıyor...",
@@ -311,7 +307,6 @@ var frTranslations = {
 	"This message was deleted...": "Ce message a été supprimé...",
 	Thread: Thread$4,
 	"Type your message": "Saisissez votre message",
-	"You have no channels currently": "Vous n'avez actuellement aucun canal",
 	live: live$4,
 	"this content could not be displayed": "ce contenu n'a pu être affiché",
 	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} et {{ lastUser }} sont en train d'écrire...",
@@ -366,7 +361,6 @@ var hiTranslations = {
 	"This message was deleted...": "मैसेज हटा दिया गया",
 	Thread: Thread$5,
 	"Type your message": "अपना मैसेज लिखे",
-	"You have no channels currently": "आपके पास कोई चैनल नहीं है",
 	live: live$5,
 	"this content could not be displayed": "यह कॉन्टेंट लोड नहीं हो पाया",
 	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} और {{ lastUser }} टाइप कर रहे हैं...",
@@ -421,7 +415,6 @@ var itTranslations = {
 	"This message was deleted...": "Questo messaggio é stato cancellato",
 	Thread: Thread$6,
 	"Type your message": "Scrivi il tuo messaggio",
-	"You have no channels currently": "Al momento non sono presenti canali",
 	live: live$6,
 	"this content could not be displayed": "questo contenuto non puó essere mostrato",
 	"{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} e {{ lastUser }} stanno scrivendo...",
@@ -6661,6 +6654,9 @@ _defineProperty(MessageSimple, "propTypes", {
    * */
   Attachment: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 
+  /** Avatar */
+  Avatar: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+
   /**
    * @deprecated Its not recommended to use this anymore. All the methods in this HOC are provided explicitly.
    *
@@ -6763,7 +6759,8 @@ _defineProperty(MessageSimple, "propTypes", {
 });
 
 _defineProperty(MessageSimple, "defaultProps", {
-  Attachment: Attachment
+  Attachment: Attachment,
+  Avatar: Avatar
 });
 
 MessageSimple = withTranslationContext(MessageSimple);
@@ -10652,6 +10649,7 @@ var Message = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/React__default.createElement(Component, _extends({}, this.props, {
         actionsEnabled: actionsEnabled,
         Message: this,
+        Avatar: Avatar,
         handleReaction: this.handleReaction,
         getMessageActions: this.getMessageActions,
         handleFlag: this.handleFlag,
@@ -10702,6 +10700,9 @@ _defineProperty(Message, "propTypes", {
    * Available from [channel context](https://getstream.github.io/stream-chat-react/#channelcontext)
    * */
   Attachment: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+
+  /** Avatar */
+  Avatar: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 
   /** render HTML instead of markdown. Posting HTML is only allowed server-side */
   unsafeHTML: PropTypes.bool,
@@ -10805,6 +10806,7 @@ _defineProperty(Message, "defaultProps", {
   readBy: [],
   groupStyles: [],
   Attachment: Attachment,
+  Avatar: Avatar,
   editing: false,
   messageActions: Object.keys(MESSAGE_ACTIONS)
 });

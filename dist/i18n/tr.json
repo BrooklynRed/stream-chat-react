@@ -28,7 +28,6 @@
   "This message was deleted...": "Bu mesaj silindi",
   "Thread": "Konu",
   "Type your message": "Mesajınızı yazın",
-  "You have no channels currently": "Henüz kanalınız yok",
   "live": "canlı",
   "this content could not be displayed": "bu içerik gösterilemiyor",
   "{{ commaSeparatedUsers }} and {{ lastUser }} are typing...": "{{ commaSeparatedUsers }} ve {{ lastUser }} yazıyor...",

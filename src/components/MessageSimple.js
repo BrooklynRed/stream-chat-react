@@ -32,6 +32,8 @@ class MessageSimple extends PureComponent {
      * Default: [Attachment](https://github.com/GetStream/stream-chat-react/blob/master/src/components/Attachment.js)
      * */
     Attachment: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+    /** Avatar */
+    Avatar: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     /**
      * @deprecated Its not recommended to use this anymore. All the methods in this HOC are provided explicitly.
      *
@@ -120,6 +122,7 @@ class MessageSimple extends PureComponent {
 
   static defaultProps = {
     Attachment,
+    Avatar,
   };
 
   state = {

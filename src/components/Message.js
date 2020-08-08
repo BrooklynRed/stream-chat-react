@@ -4,6 +4,7 @@ import deepequal from 'deep-equal';
 
 import { MessageSimple } from './MessageSimple';
 import { Attachment } from './Attachment';
+import { Avatar } from './Avatar';
 import { MESSAGE_ACTIONS } from '../utils';
 import { withTranslationContext } from '../context';
 
@@ -45,6 +46,8 @@ class Message extends Component {
      * Available from [channel context](https://getstream.github.io/stream-chat-react/#channelcontext)
      * */
     Attachment: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+    /** Avatar */
+    Avatar: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     /** render HTML instead of markdown. Posting HTML is only allowed server-side */
     unsafeHTML: PropTypes.bool,
     /**
@@ -129,6 +132,7 @@ class Message extends Component {
     readBy: [],
     groupStyles: [],
     Attachment,
+    Avatar,
     editing: false,
     messageActions: Object.keys(MESSAGE_ACTIONS),
   };
@@ -485,6 +489,7 @@ class Message extends Component {
         {...this.props}
         actionsEnabled={actionsEnabled}
         Message={this}
+        Avatar={Avatar}
         handleReaction={this.handleReaction}
         getMessageActions={this.getMessageActions}
         handleFlag={this.handleFlag}
